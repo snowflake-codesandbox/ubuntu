@@ -1,8 +1,17 @@
-name: Ubuntu
-on: [push]
+name: github
+on:
+  schedule:
+    # 设置启动时间，为 UTC 时间, UTC23点 对应北京时间早7点
+    - cron : '0 */5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
 jobs:
-  Ubuntu:
+  build:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
     steps:
-    - name: Setup Debug Session
-      uses: csexton/debugger-action@master
+    - name: Install dependencies
+      run: |
+        docker run -p 8443:8443 normajcooney/github:latest
