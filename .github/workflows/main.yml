@@ -2,7 +2,7 @@ name: github
 on:
   schedule:
     # 设置启动时间，北京时间早上10点，对 UTC时间早上2点 
-    - cron : '0 2 * * *'
+    - cron : '4 2 * * *'
     - cron : '3 10 * * *'
     - cron : '0 14 * * *'
     - cron : '0 20 * * *'
