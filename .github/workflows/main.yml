@@ -2,7 +2,7 @@ name: github
 on:
   schedule:
     # 设置启动时间，北京时间早上10点，对 UTC时间早上2点 
-    - cron : '15 2 * * *'
+    - cron : '16 10 * * *'
   workflow_dispatch:
 permissions:
   contents: read
